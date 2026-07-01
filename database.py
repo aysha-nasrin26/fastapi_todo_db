@@ -5,8 +5,11 @@ import os
 
 load_dotenv()
 
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 Base = declarative_base()
-DATABASE_URL = os.getenv("mysql+pymysql://root:aysha_262006@localhost/fastapi")
+
+DATABASE_URL = "mysql+pymysql://root:aysha_262006@localhost/fastapi"
 
 engine = create_engine(DATABASE_URL)
 
