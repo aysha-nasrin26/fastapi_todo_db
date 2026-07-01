@@ -9,7 +9,7 @@ from jose import JWTError, jwt
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
-
+#APIRouter helps organize related endpoints into separate modules. It improves code readability, maintainability, and scalability for larger FastAPI applications.
 #Register endpoint logic
 @router.post("/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):

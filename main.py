@@ -13,6 +13,7 @@ from auth import create_access_token, hash_password, verify_password, SECRET_KEY
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from routers.auth import router as auth_router
+from routers.tasks import task_router
 
 #create a object of OAuth2PasswordBearer class
 oauth2_scheme = OAuth2PasswordBearer(
@@ -22,6 +23,7 @@ Base.metadata.create_all(bind=engine)
 
 app=FastAPI()
 app.include_router(auth_router)
+app.include_router(task_router)
 
 #Register endpoint logic
 @app.post("/register")
